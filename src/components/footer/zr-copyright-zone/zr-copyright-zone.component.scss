@@ -1,0 +1,50 @@
+.top-button {
+  cursor: pointer;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: x-large;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: none;
+  animation: topArrow 5s ease -1s infinite normal forwards running;
+  &::before {
+    position: absolute;
+    bottom: 0px;
+    width: fit-content;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: end;
+    content: "︿";
+    color: rgba(255,255,255,0.5);
+    animation: topArrow 5s ease -0.66s infinite normal forwards running;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0px;
+    width: fit-content;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: end;
+    content: "︿";
+    color: rgba(255,255,255,0.5);
+    animation: topArrow 5s ease -0.33s infinite normal forwards running;
+  }
+}
+
+@keyframes topArrow {
+  0% {
+    align-items: end;
+  }
+  33% {
+    align-items: center;
+  }
+  67% {
+    align-items: start;
+  }
+}

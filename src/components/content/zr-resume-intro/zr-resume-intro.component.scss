@@ -1,0 +1,45 @@
+#intro {
+  .avatar {
+    display: flex;
+    justify-content: center;
+    .img-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      width: 160px;
+      height: 160px;
+      &:hover img.kamo {
+        animation: 1s ease-out 0s 1 normal forwards running eraseout;
+      }
+      img {
+        animation: 1s ease-in 0s 1 normal forwards running erasein;
+        position: absolute;
+        &.kamo {
+          z-index: 1;
+        }
+        &.zeki {
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
+
+@keyframes erasein {
+  from {
+    right: 100%
+  }
+  to {
+    right: 0%
+  }
+}
+
+@keyframes eraseout {
+  from {
+    right: 0%
+  }
+  to {
+    right: 100%
+  }
+}
